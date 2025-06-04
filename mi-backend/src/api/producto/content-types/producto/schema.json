@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "singularName": "producto",
+    "pluralName": "productos",
+    "displayName": "Producto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoria": {
+      "type": "string"
+    },
+    "restaurante": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::restaurante.restaurante"
+    }
+  }
+}

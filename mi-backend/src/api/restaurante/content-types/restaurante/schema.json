@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurantes",
+  "info": {
+    "singularName": "restaurante",
+    "pluralName": "restaurantes",
+    "displayName": "Restaurante",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::producto.producto"
+    }
+  }
+}
